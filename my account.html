@@ -37,58 +37,9 @@
             } 
             @media (max-width:1024px) {
             .sidenav-mobile{
-               background-color: var(--color-text-light);
-               border-radius: 8px;
-               box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-               width: 100%; /* 讓 .sidenav 佔滿整個畫面寬度 */
-               align-items: center; /* 將內容置中顯示 */
-               padding: 20px; /* 調整 padding 以保持內容的間距 */
-               margin-inline: 20px;
-               display: flex;
-               flex-direction: column;
-               align-items: flex-start;
-               gap: 0;
-
-               & ul{
-               display: flex;
-               min-width: 100%; 
-               flex-direction: column;
-               justify-content: space-between;
-               /* align-items: flex-start; */
-               gap: 20px;
+               display: none;
             }
-            
-            .accountname{
-               padding: 0 0 20px 0;
-               border-bottom: 0.5px solid var(--color-primary-medium);
-            }
-
-            .accountform-mobile{
-               margin-top: -20px;
-            }
-            .accountform-mobile li {
-               /* display: flex;
-               justify-content: space-between;
-               align-items: center; 可选，垂直居中对齐 */
-            }
-               & a{
-                  display: flex;
-                  justify-content: space-between;
-                  text-decoration: none;
-                  color: var(--color-secondary-dark);
-                  
-               }
-               & a:hover {
-                  color: var(--color-primary-dark);
-               }
-                  .sidenavselected{
-                     color: var(--color-secondary-medium);
-                  }
-                  .sidenavlogout{
-                     color: var(--color-danger);
-                  }
-               }
-            }
+         }
             
          .sidenav-desktop{
             background-color: var(--color-text-light);
@@ -138,11 +89,128 @@
                display: none !important;     
                }
          }
-         .mainarea{
+         .mainarea-mobile{
+            display: none;
+         }
+         @media (max-width:1024px) {
+         .mainarea-mobile{
             background-color: var(--color-text-light);
             border-radius: 8px;
             box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
             display: flex;
+            width: 100%;
+            padding: 20px;
+            margin-inline: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            display: flex;
+            gap: 20px;
+
+            .xsbtn {
+                  background-color: var(--color-secondary-dark);
+                  border-radius: 4px;
+                  display: flex;
+                  width: 100%;
+                  height: 27px;
+                  margin-top: 20px;
+                  padding: 4px 12px;
+                  justify-content: center;
+                  align-items: center;
+                  /* gap: 10px; */
+                  cursor: pointer; /* 添加指针样式，表明可点击 */
+               }
+
+            .xsbtn a {
+                  text-decoration: none;
+                  color: var(--color-text-light);
+                  font-family: var(--font-noto-sans);
+                  font-size: var(--fs-hint);
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+               }
+            
+            .maintitle{
+               font-size: var(--fs-h6);
+               color: var(--color-secondary-dark);
+               font-family:var(--font-noto-sans);
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+            }
+            .formdetail{
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               vertical-align:text-bottom;
+               align-items: flex-start;
+               gap: 40px;
+               min-width: 375px; 
+               
+            }
+               .formkey{
+                  color: var(--color-text-medium);
+                  font-family:var(--font-noto-sansr);
+                  font-size: var(--fs-p);
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  gap: 0.75rem;
+                  flex-shrink: 0;
+               }
+               .formvalue{
+                  color: var(--color-text-medium);
+                  font-family:var(--font-inter);
+                  font-size: var(--fs-p);
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  gap: 0.4rem;
+                  /* margin-top: 0.7rem; */
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  /* flex-basis: auto;  */
+                  /* width: 100%; */
+                  flex-grow: 1;  
+               }
+               .formstyle{
+                  color: var(--color-text-medium);
+                  font-family:var(--font-inter);
+                  font-size: var(--fs-p);
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  border: 0.5px solid var(--color-primary-medium);
+                  border-radius: 8px;
+                  display: flex;
+                  padding: 8px;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: flex-start;
+                  gap: 10px;
+                  align-self: stretch;
+                  & :hover{
+                     border: var(--color-accent-medium);
+                  & :focus{
+                     border: var(--color-primary-dark);
+                     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+                     color: var(--color-text-dark);
+   
+                     }
+
+                  }
+               }
+            }
+         }
+
+         .mainarea-desktop{
+            background-color: var(--color-text-light);
+            border-radius: 8px;
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex: 1 0 0;
             width: 100%;
             padding: 20px;
             flex-direction: column;
@@ -162,6 +230,7 @@
             }
             .formdetail{
                display: flex;
+               flex: 1 0 0;
                flex-direction: row;
                vertical-align:text-bottom;
                align-items: flex-start;
@@ -247,6 +316,8 @@
                   /* color: 新的链接颜色 */
                }
          }
+      
+
       .tabs-desktop ul{
          display: flex; /* 使用 flexbox 進行水平排列 */
          flex-direction: row;
@@ -400,7 +471,7 @@
                </li>
             </ul>
          </div>
-         <div class="mainarea">
+         <div class="mainarea-desktop">
             <div>
                <div>
                   <p class="maintitle">帳號細節</p>
@@ -448,12 +519,55 @@
                </div>
             </div>
          </div>
-         
-
+         <div class="mainarea-mobile">
+               <div>
+                  <div style="margin-bottom: 20px; width: 100%; border-bottom: 0.5px solid var(--color-primary-medium);"><p>Fanny456</p></div>
+                  <p class="maintitle">帳號細節</p>
+                  <div class="formdetail">
+                     <div class="formkey">
+                        <p>帳號名稱</p>
+                        <p>手機號碼</p>
+                     </div>
+                     <div class="formvalue">
+                        <p>Fanny456@gmail.com</p>
+                        <p>0987987452</p>
+                     </div>
+                  </div>
+                  <p class="maintitle">個人檔案</p>
+                  <div class="formdetail">
+                     <div class="formkey">
+                        <p>姓名</p>
+                        <p>手機號碼</p>
+                        <p>顯示名稱</p>
+                     </div>
+                     <div class="formvalue">
+                        <input class="formstyle" type="text" value="王貫中">
+                        <input class="formstyle" type="text" value="0987987452">
+                        <input class="formstyle" type="text" value="Fanny456">
+                     </div>
+                  </div>
+                  <p class="maintitle">變更密碼</p>
+                  <div class="formdetail">
+                     <div class="formkey">
+                        <p>舊密碼</p>
+                        <p>新密碼</p>
+                        <p>密碼確認</p>
+                     </div>
+                     <div class="formvalue">
+                        <input class="formstyle" type="password" value="">
+                        <input class="formstyle" type="password" value="">
+                        <input class="formstyle" type="password" value="">  
+                     </div>
+                  </div>
+               </div>
+            <div class="xsbtn"><a href="">儲存</a></div>
+         </div>
       </div>
-     
-
-
+      <!-- <div class="mainarea-mobile">
+         <div style="border-bottom: 0.5px solid black; width: 100%;"><p>test</p></div>
+         <hr>
+         <div><p>test</p></div>
+      </div> -->
 
    </main>
 

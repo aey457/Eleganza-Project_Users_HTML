@@ -60,7 +60,7 @@
             
             .accountname{
                padding: 0 0 20px 0;
-               border-bottom: 0.5px solid var(--color-primary-medium);
+               /* border-bottom: 0.5px solid var(--color-primary-medium); */
             }
 
             .accountform-mobile{
@@ -146,6 +146,7 @@
             width: 100%;
             padding: 20px;
             flex-direction: column;
+            flex: 1 0 0;
             align-items: flex-start;
             gap: 32px;
             @media (max-width:1024px) {
@@ -166,6 +167,7 @@
                vertical-align:text-bottom;
                align-items: flex-start;
                gap: 40px;
+               flex: 1 0 0;
             }
                .formkey{
                   color: var(--color-text-medium);
@@ -370,10 +372,9 @@
          <div class="sidenav-mobile">
             <ul class=" list-unstyled accountname">
                <li class="">
-                  <a  href="">Fanny456</a>  
+                  <div style="margin-bottom: 20px; width: 100%; border-bottom: 0.5px solid var(--color-primary-medium);"><p>Fanny456</p></div>
                </li>
             </ul>
-            <hr>
             <ul class="list-unstyled accountform-mobile">
                <li>
                      <a class="sidenavselected" href="#">我的帳號
