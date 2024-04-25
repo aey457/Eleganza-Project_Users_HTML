@@ -17,6 +17,9 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
    <link rel="stylesheet" href="EleganzaStyle.css">
    <style>
+      .wrap{
+         padding-inline: 200px;
+      }
       .main{
          display: flex;
          flex-direction: row;
@@ -122,10 +125,11 @@
          align-items: center;
          justify-content: center;
          width: 100%; /* 占满父容器的宽度 */
-         min-height: 458px;
+         height: auto; /* 根据内容自动调整高度 */
+         min-height: 400px; /* 设置最小高度 */
          flex: 1 0 0; /* 占满父容器的宽度不超過 */
-         gap: 18px;
-         padding: 20px;
+         /* gap: 18px; */
+         /* padding: 0; */
          @media (max-width:1024px) {
             display: none;
          }
@@ -321,33 +325,30 @@
             .lesson-mobile{
                display: flex;
                flex-direction: column;
-               gap:16px;
+               flex-wrap: wrap; 
                background-color: var(--color-text-light);
                box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
                justify-content: center;
                align-items: center;
-               flex-shrink: 0;
-               width: 100%;
                height: auto;
-               min-height: 300px;
+               min-height: 250px;
+               width: 100%;
                border-radius: 8px;
-               padding: 20px;
+            }
+            .lesson-mobile .orderhistoryrow-l {
+               display: flex;
+               flex-direction: row;
+               max-height: 72px;
+               padding: 0 20px;
+               justify-content: space-between;
+               align-items: center;
+               align-self: stretch;
+               flex: 1 0 0;
+               flex-wrap: wrap; 
+               gap: auto;
+               border-bottom: 0.5px solid var(--color-primary-medium);
             }
          }  
-         .emptycontent{
-            display: block;
-            align-items: center;
-            color: var(--color-text-dark);
-            font-family: var(--font-inter);
-            font-size: var(--fs-p);
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            & p{
-               margin: 0;
-            }
-     
-         }
          .sbtn{
                display: flex;
                padding: 8px 16px;
@@ -371,6 +372,28 @@
             .sbtn:hover {
                   background-color: var(--color-secondary-medium);
                }
+            .orderhistoryrow-l{
+               display: flex;
+               flex-direction: row;
+               max-height: 80px;
+               padding: 0 20px;
+               justify-content: space-between;
+               align-items: center;
+               align-self: stretch;
+               flex: 1 0 0;
+               gap: auto;
+               border-bottom: 0.5px solid var(--color-primary-medium);
+               & p{
+                  color: var(--color-secondary-dark);
+                  margin: 0;
+               }
+            }
+            .checkdetail{
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               gap: 4px;
+            }
    </style>
 </head>
 
@@ -477,17 +500,106 @@
             </ul>
          </div>
          <div class="mainarea-desktop-collection">
-            <div class="emptycontent">
-               <p >您尚未有任何一筆訂單</p>
+            <div class="orderhistoryrow-l">
+               <p>#512384323</p>
+               <p>November 17, 2023</p>
+               <p>$8,8666</p>
+               <p>已到貨</p>
+               <div class="checkdetail">
+                     <p style="margin: 0;">查看詳情</p> 
+                     <a href="">
+                        <img src="./icons/icon-chevron-down.svg" alt="">
+                     </a>
+               </div>
             </div>
-            <div class="sbtn"><a href="">前往購物</a></div>
+            <div class="orderhistoryrow-l">
+               <p>#512384323</p>
+               <p>November 17, 2023</p>
+               <p>$8,8666</p>
+               <p>已到貨</p>
+               <div class="checkdetail">
+                     <p style="margin: 0;">查看詳情</p> 
+                     <a href="">
+                        <img src="./icons/icon-chevron-down.svg" alt="">
+                     </a>
+               </div>
+            </div>
+            <div class="orderhistoryrow-l">
+               <p>#512384323</p>
+               <p>November 17, 2023</p>
+               <p>$8,8666</p>
+               <p>已到貨</p>
+               <div class="checkdetail">
+                     <p style="margin: 0;">查看詳情</p> 
+                     <a href="">
+                        <img src="./icons/icon-chevron-down.svg" alt="">
+                     </a>
+               </div>
+            </div>
+            <div class="orderhistoryrow-l">
+               <p>#512384323</p>
+               <p>November 17, 2023</p>
+               <p>$8,8666</p>
+               <p>已到貨</p>
+               <div class="checkdetail">
+                     <p style="margin: 0;">查看詳情</p> 
+                     <a href="">
+                        <img src="./icons/icon-chevron-down.svg" alt="">
+                     </a>
+               </div>
+            </div>
+            <div class="orderhistoryrow-l">
+               <p>#512384323</p>
+               <p>November 17, 2023</p>
+               <p>$8,8666</p>
+               <p>已到貨</p>
+               <div class="checkdetail">
+                     <p style="margin: 0;">查看詳情</p> 
+                     <a href="">
+                        <img src="./icons/icon-chevron-down.svg" alt="">
+                     </a>
+               </div>
+            </div>
          </div>
-        <div class="lesson-mobile">
-         <div class="emptycontent">
-            <p >您尚未有任何一筆訂單</p>
+         <div class="lesson-mobile">
+            <div class="orderhistoryrow-l">
+               <p>#512384323</p>
+               <p>11/17/2023</p>
+               <p>已到貨</p>
+               <a href="">
+                  <img src="./icons/icon-chevron-down.svg" alt="">
+               </a>
+               </div>
+               <div class="orderhistoryrow-l">
+                  <p>#512384323</p>
+                  <p>11/17/2023</p>
+                  <p>已到貨</p>
+                  <a href="">
+                     <img src="./icons/icon-chevron-down.svg" alt="">
+                  </a>
+               </div>
+               <div class="orderhistoryrow-l">
+                  <p>#512384323</p>
+                  <p>11/17/2023</p>
+                  <p>已到貨</p>
+                  <a href="">
+                     <img src="./icons/icon-chevron-down.svg" alt="">
+                  </a>
+               </div>
+               <div class="orderhistoryrow-l">
+                  <p>#512384323</p>
+                  <p>11/17/2023</p>
+                  <p>已到貨</p>
+                  <a href="">
+                     <img src="./icons/icon-chevron-down.svg" alt="">
+                  </a>
+               </div>
+                  
+            </div>
+            
          </div>
-         <div class="sbtn"><a href="">前往購物</a></div>
-         </div>
+         
+      </div>
          
 
 
