@@ -17,11 +17,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
    <link rel="stylesheet" href="EleganzaStyle.css">
    <style>
-      :root{
-         a:hover{
-            color: var(--color-primary-dark);
-         }
-      }
+      
       .overlaybg {
          position: fixed;
          top: 0;
@@ -41,7 +37,7 @@
       .popupwindow{
          display: flex;
          width: 380px;
-         padding: 20px 20px 0px 20px;
+         padding: 20px 20px 0 20px;
          flex-direction: column;
          align-items: flex-end;
          gap: 100px;
@@ -49,6 +45,7 @@
          align-self: stretch;
          background: var(--color-text-light);
          box-shadow: -50px 0px 50px -50px rgba(0, 0, 0, 0.25);
+         bottom: 20px;
          & img{
             width: 24px;
             height: 24px;
@@ -63,13 +60,13 @@
       }
       
       .formwrap{
+         margin-top: -90px;
          display: flex;
          flex-direction: column;
          justify-content: center;
          align-items: center;
          gap: 24px;
          align-self: stretch;
-         margin-top: -40px;
       }
       .formwrap-s{
          display: flex;
@@ -94,22 +91,40 @@
                color: inherit;
             }
       }
+      .contactus{
+         display: flex;
+         width: 340px;
+         height: 80px;
+         justify-content: center;
+         align-items: center;
+         gap: 10px;
+         & p{
+            color: var(--color-text-medium);
+            text-align: center;
+            font-family: "Noto Sans";
+            font-size: var(--fs-h6);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+         }
+      }
       .form{
          width: 100%;
+         gap: 8px;
       }
       .formkey{
          color: var(--color-secondary-dark);
-         font-family: var(--font-inter);
-         font-size: var(--fs-hint);
+         font-family: var(--font-noto-sans);
+         font-size: var(--fs-p);
          font-style: normal;
-         font-weight: 400;
+         font-weight: 300;
          line-height: normal;
-         margin: 4px 0;
+         margin: 8px 0;
       }
       .formvalue{
          width: 100%;
          display: flex;
-         height: 40px;
+         min-height: 40px;
          padding: 8px;
          align-items: center;
          gap: 10px;
@@ -117,17 +132,9 @@
          border-radius: 8px;
          border: 1px solid var(--color-primary-medium);
          box-sizing: border-box; /* 確保 padding 不會影響寬度 */
-      }
-      /* 以下一樣沒效，有空去複習HTML5那時候好像有講到眼睛的接法 */
-      .formvalue::placeholder {
-         /* 使用 base64 编码的图标 */
-         background-image: url(./icons/icon-eye.svg);
-         /* 调整图标位置，这里根据需要进行调整 */
-         background-position: right center;
-         /* 保证图标不会重复显示 */
-         background-repeat: no-repeat;
-         /* 调整图标与文本之间的间距 */
-         padding-right: 20px;
+         color: var(--color-text-medium);
+         font-size: var(--fs-des);
+         margin: 0 0 8px 0;
       }
       .formcheck{
          display: flex;
@@ -168,8 +175,9 @@
                   justify-content: center;
                   align-items: center;
                   gap: 10px;
-                  align-self: stretch;
+                  width: fit-content;
                   cursor: pointer; /* 添加指针样式，表明可点击 */
+              
                }
 
       .mbtn a {
@@ -269,40 +277,28 @@
             <div class="formwrap">
                <div class="logo"> <a href="">ELEGANZA</a></div>
                <div class="formwrap-s">
+                  <div class="contactus">
+                     <p>聯繫我們<br>Contact Us</p>
+                   </div>
                   <div class="form">
-                     <p class="formkey">Email</p>
+                     <p class="formkey">您的聯絡資訊</p>
+                     <input class="formvalue" type="text">
+                     <input class="formvalue" type="text">
                      <input class="formvalue" type="text">
                   </div>
-                  <div class="form">
-                     <p class="formkey">手機號碼</p>
-                     <input class="formvalue" type="text">
-                  </div>
-                  <div class="form">
-                     <p class="formkey">密碼</p>
-                     <input class="formvalue" type="password">
-                     <div class="passwordlevel">
-                        <div class="passwordintensity"></div>
-                        <div class="passwordintensity"></div>
-                        <div class="passwordintensity"></div>
-                        <div class="passwordintensity-l"></div>
-                     </div>   
-                  </div>
-                  <div class="form">
-                     <p class="formkey">重新輸入密碼</p>
-                     <input class="formvalue" type="password">   
-                  </div>
-                  <div class="formcheck">
-                     <div class="checkloginstatus">
-                        <input type="checkbox">
-                         <p>保持登入狀態</p>
-                     </div>
-                     <a href="">忘記密碼？</a>
-                  </div>
-                  <div class="mbtn"><a href="">登入</a></div>
                </div>
-               <div class="registeraccount">
-                  <p>已有帳號了嗎？</p>
-                  <a href="">由此登入</a>
+               <div class="formwrap-s">
+                  <div class="form">
+                     <p class="formkey">諮詢細項</p>
+                     <select class="formvalue" placeholder="請選擇您要諮詢的項目">
+                        <option value="option1">課程諮詢</option>
+                        <option value="option2">買琴諮詢</option>
+                        <option value="option3">其他合作</option>
+                      </select>
+                      <textarea class="formvalue" rows="5" cols="50">請在此留下您要諮詢的詳細內容，我們會儘快和您聯繫。</textarea>
+                  </div>
+               </div>
+               <div class="mbtn"><a href="">送出</a></div>
                </div>
             </div>
          </div>
