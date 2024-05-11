@@ -143,7 +143,7 @@
             border-bottom: 0.5px solid var(--color-primary-medium);
             align-items: center;
             gap: 10px;
-            padding: 0 10px;
+            padding: 0 0 0 10px;
             justify-content: center;
          }
       }
@@ -263,8 +263,37 @@
             display: block; /* 在小于1024px的屏幕宽度下显示 */
          }
       }
-      
 
+      .productcard-hidden{
+         display: none;
+      }
+      @media (max-width: 1024px) {
+         .productcard-hidden{
+            display: flex;
+            flex-direction: row;
+            background: var(--color-primary-medium);
+            padding: 0 20px;
+            
+               align-items: center;
+               gap: 10px;
+               align-self: stretch;
+         }
+         & .hiddenbtn{
+            display: flex;
+            width: fit-content;
+            justify-content: center;
+            flex: 1 0 0;
+            & a{
+               color: var(--color-text-light);
+               font-size: var(--fs-hint);
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+            
+            }
+         }
+      }
+   
       .tabs-desktop ul{
          display: flex; /* 使用 flexbox 進行水平排列 */
          flex-direction: row;
@@ -619,17 +648,20 @@
                    <a class="icon-mobile" href="">
                      <img src="./icons/icon-chevron-right.svg" alt="手機版">
                   </a>
-                   <div class="productcardicons">
-                     <a href="">
-                        <img src="./icons/icon-cart.svg" alt="購物車">
-                    </a>
-                    
-                    <a href="">
-                        <img src="./icons/icon-liked.svg" alt="收藏">
-                    </a>
-                   </div>
                </ul>
-           </div>
+            </div>
+            <div class="productcard-hidden">
+               <div class="hiddenbtn">
+                  <a href="">
+                     加入購物車
+                 </a>
+               </div>
+              <div class="hiddenbtn">
+               <a href="">
+                  刪除
+              </a>
+              </div>
+            </div>
          </div>
          <div class="productcard">
             <a href=""><img src="./images/product_images/6746845_800.jpg" alt="" class="productcardimg"></a> 
